@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'DM Sans', sans-serif; color: #eef9fa; background: #07151f; font-synthesis: none; }
+:root[data-theme='light'] { color: #123042; background: #eef9f8; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.app-shell { min-height: 100vh; overflow: hidden; position: relative; background: radial-gradient(circle at 13% 18%, rgba(25, 172, 171, .18), transparent 28%), linear-gradient(135deg, #081c2a 0%, #07151f 53%, #0c2631 100%); display: flex; flex-direction: column; align-items: center; padding: 30px 7vw 24px; }
+:root[data-theme='light'] .app-shell { background: radial-gradient(circle at 15% 15%, rgba(34, 185, 175, .15), transparent 28%), linear-gradient(135deg, #f2fbfa, #e8f3f3); }
+.ambient { position: absolute; width: 420px; height: 420px; border-radius: 50%; filter: blur(2px); pointer-events: none; border: 1px solid rgba(69, 213, 190, .09); }
+.ambient-one { left: -245px; top: 36%; box-shadow: 0 0 0 56px rgba(40, 182, 174, .025), 0 0 0 112px rgba(40, 182, 174, .018); }
+.ambient-two { right: -270px; bottom: -235px; background: rgba(29, 142, 165, .08); }
+.theme-toggle { align-self: flex-end; border: 1px solid rgba(159, 225, 222, .18); color: #cdebea; background: rgba(255,255,255,.055); border-radius: 99px; padding: 10px 15px; display: flex; gap: 9px; align-items: center; font-size: 12px; transition: .2s ease; }
+.theme-toggle:hover { background: rgba(255,255,255,.11); transform: translateY(-1px); }
+:root[data-theme='light'] .theme-toggle { color: #25576a; border-color: rgba(18, 82, 98, .16); background: rgba(255,255,255,.65); }
+.auth-layout { z-index: 1; width: 100%; display: grid; place-items: center; align-items: center; margin: auto; padding: 38px 0 42px; }
+.auth-card { width: 100%; max-width: 450px; justify-self: center; background: rgba(14, 38, 48, .86); border: 1px solid rgba(148, 225, 215, .16); border-radius: 27px; overflow: hidden; box-shadow: 0 25px 80px rgba(0, 0, 0, .28); backdrop-filter: blur(17px); }
+:root[data-theme='light'] .auth-card { background: rgba(255,255,255,.82); border-color: rgba(14, 88, 99, .13); box-shadow: 0 25px 70px rgba(36, 107, 110, .12); }
+.mascot-frame { height: 180px; 
+  width: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #0d212c; /* El color de fondo del banner */
+  overflow: hidden;
+  padding: 1rem; }
+.mascot-frame img { max-height: 100% !important; 
+  max-width: 100% !important; 
+  width: auto !important; 
+  height: auto !important; 
+  object-fit: contain !important; 
+  object-position: center !important; }
+.auth-content { padding: 25px 31px 27px; }
+.card-heading { display: flex; align-items: center; justify-content: space-between; }
+.mini-label { color: #6f9ca1; letter-spacing: .16em; font-size: 9px; font-weight: 700; }
+.card-heading h2 { margin: 4px 0 0; color: #f4ffff; font: 700 31px 'Space Grotesk'; letter-spacing: -.05em; }
+.card-heading h2 span { color: #35d8be; }
+:root[data-theme='light'] .card-heading h2 { color: #123744; }
+.shape-icon { width: 40px; height: 40px; display: grid; place-items: center; color: #35d8be; background: rgba(50, 210, 184, .1); border-radius: 12px; transform: rotate(30deg); }
+.shape-icon svg { transform: rotate(-30deg); }
+.auth-intro { color: #93b2b6; font-size: 13px; margin: 8px 0 20px; }
+:root[data-theme='light'] .auth-intro { color: #62808a; }
+.mode-switch { display: grid; grid-template-columns: 1fr 1fr; background: rgba(3, 19, 27, .45); border-radius: 10px; padding: 4px; margin-bottom: 20px; }
+:root[data-theme='light'] .mode-switch { background: #eaf3f3; }
+.mode-switch button { border: 0; color: #729399; background: transparent; border-radius: 7px; padding: 9px; font-weight: 600; font-size: 12px; transition: .2s; }
+.mode-switch button.active { color: #092b35; background: #39d6bd; box-shadow: 0 4px 12px rgba(42, 207, 180, .18); }
+label { display: block; font-size: 11px; font-weight: 600; color: #b7ced0; margin: 15px 0 8px; }
+:root[data-theme='light'] label { color: #41636d; }
+.input-wrap { display: flex; align-items: center; gap: 10px; height: 47px; padding: 0 13px; border-radius: 10px; border: 1px solid rgba(135, 200, 199, .15); background: rgba(3, 20, 27, .36); color: #5eaaa9; transition: .2s; }
+:root[data-theme='light'] .input-wrap { background: #f5fbfb; border-color: #d4e7e7; }
+.input-wrap:focus-within { border-color: #31cdb5; box-shadow: 0 0 0 3px rgba(49, 205, 181, .1); }
+.input-wrap input { flex: 1; min-width: 0; border: 0; outline: 0; color: #e5f6f5; background: transparent; font-size: 13px; }
+:root[data-theme='light'] .input-wrap input { color: #183c49; }
+.input-wrap input::placeholder { color: #57747a; }
+.password-dot { font-size: 12px; letter-spacing: -1px; color: #5eaaa9; }
+.password-toggle { border: 0; color: #72969a; background: transparent; display: grid; padding: 2px; }
+.form-message { font-size: 11px; line-height: 1.4; margin: 11px 0 0; }
+.form-message.error { color: #ff8b96; }.form-message.success { color: #4addbd; }
+.submit-button { width: 100%; height: 49px; border: 0; display: flex; align-items: center; justify-content: center; gap: 9px; border-radius: 11px; margin-top: 20px; color: #062d37; background: linear-gradient(100deg, #48e0bd, #25c7bc); font-size: 13px; font-weight: 700; box-shadow: 0 9px 22px rgba(29, 195, 167, .2); transition: .2s ease; }
+.submit-button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 13px 26px rgba(29, 195, 167, .29); }.submit-button:disabled { opacity: .6; cursor: wait; }
+.terms { text-align: center; color: #66878d; font-size: 10px; line-height: 1.5; margin: 17px 14px 0; }
+footer { color: #63838a; font-size: 11px; display: flex; gap: 10px; align-items: center; }.footer-dot { color: #2ecbb5; font-size: 16px; }footer span:first-child { color: #a5c6c8; font-weight: 700; }
+:root[data-theme='light'] footer span:first-child { color: #28616c; }
+@media (max-width: 780px) { .app-shell { padding: 20px 20px 22px; }.theme-toggle { margin-bottom: 10px; }.auth-layout { padding: 14px 0 34px; max-width: 480px; }.ambient { opacity: .5; } }
+@media (max-width: 430px) { .auth-content { padding: 22px 21px 24px; }.mascot-frame { height: 220px; } footer { font-size: 10px; } }
